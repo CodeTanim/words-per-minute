@@ -16,6 +16,8 @@ def start_screen(screen):
 
 
 
+
+
 def display_text(screen, target, current, wpm = 0):
     # A function primarily for displaying text on the terminal screen
     screen.addstr(target)
@@ -52,14 +54,71 @@ def load_text():
 
 
 
+def free_space():
+    # After updating the score and sorting it from highest to lowest. Delete any score below 
+    # the top 5 spot to free up some space. 
+
+    with open('high_score.txt', 'r') as file:
+        # read a list of lines into content. Essentially making an array of sort.
+        lines = file.readlines()
+
+    file.close()
+
+    i = 0
+    if len(lines) > 5:
+
+        del_amount = len(lines)-5
+        while i < del_amount:
+            del lines[5]
+            i +=1
+
+
+    new_lines = open('high_score.txt', 'w')
+
+    for line in lines:
+        new_lines.write(line)
+
+    new_lines.close()
+ 
+
+    
+
+def update_score(wpm):
+    # Try a more in place approach by iterating through lines and using the replace function by having an already sorted list. 
+
+
+    score = wpm
+    file = open("high_score.txt", "a")
+    file.write(str(score)+"\n")
+    file.close()
+
+
+
+    # Now to sort the text file and write to the high_score text file. 
+    new_file = open("high_score.txt", "r")
+    #Below a list is made from the scores text file.
+    lines = new_file.readlines()
+
+    new_file.close()
+
+    lines.sort(reverse = True)
+
+    with open("high_score.txt", "w") as ofile:
+        for line in lines:
+            ofile.write(line)
+
+    ofile.close()
+   
+
+
 
 
 def wpm_test(screen):
-    target_text = load_text()
+    target_text = load_text() # The target sentence string that you want to use for your typing test. A random text will be loaded. 
     current_text = []
-    wpm = 0
     start_time = time.time()
     screen.nodelay(True)
+    wpm = 0
     
 
     while True:
@@ -72,6 +131,8 @@ def wpm_test(screen):
 
         if  "".join(current_text) == target_text:
            screen.nodelay(False)
+           update_score(wpm)
+           free_space()
            break
 
         try:
@@ -93,6 +154,27 @@ def wpm_test(screen):
 
 
 
+
+def display_score(screen):
+    file = open("high_score.txt", "r")
+    lines = file.readlines()
+
+    screen.addstr(8,0, "The top 5 scores are displayed below:")
+    j = 10
+    i = 0
+    k = 1
+    while i < len(lines):
+        screen.addstr(j, 0, str(k))
+        screen.addstr(j, 1, ") ")
+        screen.addstr(j, 2," ")
+        screen.addstr(j, 3, lines[i])
+        j += 1
+        i += 1
+        k += 1
+
+
+
+
 def main(screen):
     curses.init_pair(1, curses.COLOR_GREEN, curses.COLOR_BLACK)
     curses.init_pair(2, curses.COLOR_RED, curses.COLOR_BLACK)
@@ -104,9 +186,25 @@ def main(screen):
     while True:
         wpm_test(screen)
         screen.addstr(3, 0, "You have completed the test! Your WPM is displayed right above this text. Press any key to continue... ")
+
+
+        # Displays the top 5 high scores. 
+        display_score(screen)
+
+        #gets key to potentially end/exit out of the program
         key = screen.getkey()
 
+
+
+
+
+        
         if ord(key) == 27:
             break
+
+    
+           
+            
+
 
 wrapper(main)
