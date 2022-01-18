@@ -17,6 +17,7 @@ After running the command, the user will be greeted by the following screen:
 
 
 
+# How the program works
 
 
 The player will be shown a random sentence on the terminal screen as shown below:
