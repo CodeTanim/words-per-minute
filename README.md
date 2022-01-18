@@ -8,3 +8,5 @@ Since this is a terminal app, it must be run from the terminal. For our purposes
 
 The player will be shown a random sentence on the terminal screen as shown below:
 
+![alt text](screenshots/demo.png "Demo")
+
