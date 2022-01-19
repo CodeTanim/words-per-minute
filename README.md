@@ -17,10 +17,10 @@ After running the command, the user will be greeted by the following screen:
 
 
 
-# How the program works
+# How the Program Works
 
 
 The player will be shown a random sentence on the terminal screen as shown below:
 
-![alt text](screenshots/demo.png "Demo")
+![alt text](screenshots/demo2.png "Demo")
 
