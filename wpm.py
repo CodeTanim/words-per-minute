@@ -186,7 +186,7 @@ def main(screen):
     while True:
         wpm_test(screen)
         screen.addstr(3, 0, "You have completed the test! Your WPM is displayed right above this text. Press any key to continue... ")
-
+        screen.addstr(4,0, "Press esc to exit.")
 
         # Displays the top 5 high scores. 
         display_score(screen)
