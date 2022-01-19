@@ -20,7 +20,12 @@ After running the command, the user will be greeted by the following screen:
 # How the Program Works
 
 
-The player will be shown a random sentence on the terminal screen as shown below:
+First, the user will be shown a random sentence on the terminal screen. Then the user must type the shown sentence exactly as it is written on the screen.
+The words per minute counter (WPM on screen) will be continously changing and will depend on the user's accuracy in typing the correct keys and/or the amount of time the
+user takes to complete typing the entire sentence. 
+
+
+Below is an example sentence, where the correct keystrokes are highlighted as green and the incorrect keystrokes are highlighted as red.
 
 ![alt text](screenshots/demo2.png "Demo")
 
