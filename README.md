@@ -36,3 +36,12 @@ Below is an example sentence, where the correct keystrokes are highlighted as gr
 When the user finishes typiing an entire sentence correctly. Their wpm score will be shown, and the top 5 scores recorded so far will also be shown:
 
 ![alt text](screenshots/complete.png "Complete")
+
+
+# Notes
+
+1) The user must have python install on their computer
+
+2) The program currently randomizes 40 different sentences. If the user wishes to add more sentences, they can visit the random sentence generator [website](https://randomwordgenerator.com/sentence.php) and add a sentence to a new line in the test.txt file. 
+
+3) If the user wishes to wipe the current top 5 score, they need to simply go in the high_score.txt file, erase all of its contents and simply save the empty file. 
