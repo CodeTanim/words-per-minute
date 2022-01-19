@@ -29,3 +29,10 @@ Below is an example sentence, where the correct keystrokes are highlighted as gr
 
 ![alt text](screenshots/demo2.png "Demo")
 
+
+
+
+
+When the user finishes typiing an entire sentence correctly. Their wpm score will be shown, and the top 5 scores recorded so far will also be shown:
+
+![alt text](screenshots/complete.png "Complete")
