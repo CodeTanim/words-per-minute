@@ -40,7 +40,7 @@ When the user finishes typiing an entire sentence correctly. Their wpm score wil
 
 # Notes
 
-1) The user must have python install on their computer
+1) The user must have python installed on their computer.
 
 2) The program currently randomizes 40 different sentences. If the user wishes to add more sentences, they can visit the random sentence generator [website](https://randomwordgenerator.com/sentence.php) and add a sentence to a new line in the test.txt file. 
 
