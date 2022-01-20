@@ -1,7 +1,7 @@
-## Words-Per-Minute
+# Words-Per-Minute
 A terminal app written in python utilizing the curses module that tests the user's ability to type. 
 
-# How to Run?
+## How to Run?
 
 Since this is a terminal app, it must be run from the terminal. For our purposes, we are going to use the windows command prompt. 
 In order to run the program we simply need to open the command prompt inside the directory where the main program code is located and then type in:
@@ -17,7 +17,7 @@ After running the command, the user will be greeted by the following screen:
 
 
 
-# How the Program Works
+## How the Program Works
 
 
 First, the user will be shown a random sentence on the terminal screen. Then the user must type the shown sentence exactly as it is written on the screen.
@@ -38,7 +38,7 @@ When the user finishes typiing an entire sentence correctly. Their wpm score wil
 ![alt text](screenshots/complete.png "Complete")
 
 
-# Notes
+## Notes
 
 1) The user must have python installed on their computer.
 
