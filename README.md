@@ -1,5 +1,5 @@
 # Words-Per-Minute
-A terminal app written in python utilizing the curses module that tests the user's ability to type. 
+A terminal app written in python utilizing the curses module that trains users to type faster. 
 
 ## How to Run?
 
